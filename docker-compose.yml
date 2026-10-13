@@ -9,7 +9,7 @@ services:
       DB_PORT: 1433
       DB_NAME: pedidos
       DB_USER: sa
-      DB_PASSWORD: Api-pedidos#2026
+      DB_PASSWORD: ${DB_PASSWORD}
       PORT: 3000
     depends_on:
       - sqlserver
@@ -21,7 +21,7 @@ services:
     container_name: pedidos-sqlserver
     environment:
       ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: Api-pedidos#2026
+      MSSQL_SA_PASSWORD: ${DB_PASSWORD}
       MSSQL_PID: Developer
     ports:
       - "1433:1433"
